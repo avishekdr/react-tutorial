@@ -1,5 +1,6 @@
 import './App.css';
 import { Expenses } from './components/Expenses/Expenses';
+import { NewExpense } from './components/NewExpense/NewExpense';
 
 function App() {
   const expenses = [
@@ -8,7 +9,18 @@ function App() {
     { id: 'e3', title: 'Car Insurance', amount: 294.67, date: new Date(2021, 2, 28) },
     { id: 'e4', title: 'New Desk (Wooden)', amount: 450, date: new Date(2021, 5, 12) },
   ];
-  return <Expenses items={expenses} />;
+
+  const newExpenseHandler = (value) => {
+    expenses.push(value);
+    console.log(expenses);
+  };
+
+  return (
+    <div>
+      <NewExpense getNewExpense={newExpenseHandler} />
+      <Expenses items={expenses} />
+    </div>
+  );
 }
 
 export default App;
