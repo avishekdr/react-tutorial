@@ -5,6 +5,7 @@
     background-color: #1e85fa;
     border-radius: .25rem;
     color: #edf1f7;
+    cursor: pointer;
 }
 
 .button:focus { outline: none; }
