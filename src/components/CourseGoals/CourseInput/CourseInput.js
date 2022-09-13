@@ -3,15 +3,19 @@ import { Button } from '../../UI/Button/Button';
 import './CourseInput.css';
 
 export function CourseInput(props) {
-    const [enteredValue, setEnteredValue] = useState('');
+    const [enteredValue, setEnteredValue] = useState(''), [isValid, setIsValid] = useState(true);
 
     const goalInputChangeHandler = event => {
+        if(enteredValue.trim().length > 0) { setIsValid(true) }
         setEnteredValue(event.target.value);
     };
 
     const formSubmitHandler = event => {
         event.preventDefault();
-        if(enteredValue.trim().length === 0) { return }
+        if(enteredValue.trim().length === 0) {
+            setIsValid(false);
+            return;
+        }
         props.onAddGoal(enteredValue);
     };
 
