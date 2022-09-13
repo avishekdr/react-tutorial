@@ -1,0 +1,23 @@
+.input-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-form__field-label {
+    color: #8994a3;
+    font-weight: 600;
+}
+
+.input-form__field {
+    font-family: sans-serif;
+    background-color: #edf1f7;
+    border-radius: .25rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    padding: .5rem 1rem;
+    color: #222b45;
+    border: 1px solid #b9babc;
+    letter-spacing: 1px;
+}
+
+.input-form__field:hover, .input-form__field:focus { border: 2px solid #222b45; }
