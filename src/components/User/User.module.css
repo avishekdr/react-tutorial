@@ -1,0 +1,11 @@
+.item {
+    padding: 1rem;
+    background-color: #b9babc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    color: #222b45;
+    border: 2px solid #222b45;
+    border-radius: .25rem;
+}
