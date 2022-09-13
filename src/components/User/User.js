@@ -1,4 +1,3 @@
-import { Fragment } from 'react';
 import style from './User.module.css';
 
 export function User(props) {
