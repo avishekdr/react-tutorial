@@ -1,8 +1,10 @@
+import { Fragment } from 'react';
+import ReactDOM from 'react-dom';
 import { Card } from '../Card/Card';
 import { Button } from '../Button/Button';
 import style from './ErrorModal.module.css';
 
-export function ErrorModal(props) {
+const Popup = props => {
     return (
         <div className={style.backdrop}>
             <div className={style.modal}>
@@ -12,5 +14,18 @@ export function ErrorModal(props) {
                 </Card>
             </div>
         </div>
+    );
+};
+
+export function ErrorModal(props) {
+    return (
+        <Fragment>
+            {
+                ReactDOM.createPortal(
+                    <Popup message={props.message} onConfirm={props.onConfirm} />,
+                    document.getElementById('error-modal')
+                )
+            }
+        </Fragment>
     );
 }
